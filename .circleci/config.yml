@@ -22,7 +22,8 @@ jobs:
       TERM: dumb
 
     steps:
-      - checkout
+      - checkout:
+        path: ~/Auto-Lvl-2---Add-integration-with-CircleCI-devOps-
 
       # Download and cache dependencies
       - restore_cache:
