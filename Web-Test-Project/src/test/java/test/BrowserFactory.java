@@ -41,17 +41,17 @@ public class BrowserFactory {
                 FirefoxOptions ffOptions = new FirefoxOptions();
                 //ffOptions.addArguments("--headless");
                 //ffOptions.addArguments("--window-size=1920,1080");
-				chromeOptions.addArguments('--ignore-certificate-errors')
-				chromeOptions.addArguments("--test-type")
-				chromeOptions.addArguments("test-type");
-				chromeOptions.addArguments("start-maximized");
-				chromeOptions.addArguments("--window-size=1920,1080");
-				chromeOptions.addArguments("--enable-precise-memory-info");
-				chromeOptions.addArguments("--disable-popup-blocking");
-				chromeOptions.addArguments("--disable-default-apps");
-				chromeOptions.addArguments("test-type=browser");
-				chromeOptions.AddArgument("--incognito");
-				chromeOptions.AddArgument("--no-sandbox");
+				ffOptions.addArguments('--ignore-certificate-errors')
+				ffOptions.addArguments("--test-type")
+				ffOptions.addArguments("test-type");
+				ffOptions.addArguments("start-maximized");
+				ffOptions.addArguments("--window-size=1920,1080");
+				ffOptions.addArguments("--enable-precise-memory-info");
+				ffOptions.addArguments("--disable-popup-blocking");
+				ffOptions.addArguments("--disable-default-apps");
+				ffOptions.addArguments("test-type=browser");
+				ffOptions.AddArgument("--incognito");
+				ffOptions.AddArgument("--no-sandbox");
                 driver = new FirefoxDriver(ffOptions);
                 break;
             default:
