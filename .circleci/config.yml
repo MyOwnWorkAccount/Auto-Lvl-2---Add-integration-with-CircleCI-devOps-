@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - checkout:
-        path: ~/Auto-Lvl-2---Add-integration-with-CircleCI-devOps-
+          path: ~/Auto-Lvl-2---Add-integration-with-CircleCI-devOps-
 
       # Download and cache dependencies
       - restore_cache:
