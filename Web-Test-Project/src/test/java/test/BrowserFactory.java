@@ -22,14 +22,14 @@ public class BrowserFactory {
                 WebDriverManager.getInstance(CHROME).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("--window-size=1920,1080");
+                //chromeOptions.addArguments("--window-size=1920,1080");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "ff":
                 WebDriverManager.getInstance(FIREFOX).setup();
                 FirefoxOptions ffOptions = new FirefoxOptions();
                 ffOptions.addArguments("--headless");
-                ffOptions.addArguments("--window-size=1920,1080");
+                //ffOptions.addArguments("--window-size=1920,1080");
                 driver = new FirefoxDriver(ffOptions);
                 break;
             default:
