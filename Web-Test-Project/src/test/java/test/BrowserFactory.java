@@ -22,8 +22,8 @@ public class BrowserFactory {
                 WebDriverManager.getInstance(CHROME).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
-                //chromeOptions.addArguments("--window-size=1920,1080");
-				chromeOptions.addArguments("--ignore-certificate-errors");
+                chromeOptions.addArguments("--window-size=1920,1080");
+				/*chromeOptions.addArguments("--ignore-certificate-errors");
 				chromeOptions.addArguments("--test-type");
 				chromeOptions.addArguments("test-type");
 				chromeOptions.addArguments("start-maximized");
@@ -33,15 +33,15 @@ public class BrowserFactory {
 				chromeOptions.addArguments("--disable-default-apps");
 				chromeOptions.addArguments("test-type=browser");
 				chromeOptions.addArguments("--incognito");
-				chromeOptions.addArguments("--no-sandbox");
+				chromeOptions.addArguments("--no-sandbox");*/
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "ff":
                 WebDriverManager.getInstance(FIREFOX).setup();
                 FirefoxOptions ffOptions = new FirefoxOptions();
                 ffOptions.addArguments("--headless");
-                //ffOptions.addArguments("--window-size=1920,1080");
-				ffOptions.addArguments("--ignore-certificate-errors");
+                ffOptions.addArguments("--window-size=1920,1080");
+				/*ffOptions.addArguments("--ignore-certificate-errors");
 				ffOptions.addArguments("--test-type");
 				ffOptions.addArguments("test-type");
 				ffOptions.addArguments("start-maximized");
@@ -51,7 +51,7 @@ public class BrowserFactory {
 				ffOptions.addArguments("--disable-default-apps");
 				ffOptions.addArguments("test-type=browser");
 				ffOptions.addArguments("--incognito");
-				ffOptions.addArguments("--no-sandbox");
+				ffOptions.addArguments("--no-sandbox");*/
                 driver = new FirefoxDriver(ffOptions);
                 break;
             default:
