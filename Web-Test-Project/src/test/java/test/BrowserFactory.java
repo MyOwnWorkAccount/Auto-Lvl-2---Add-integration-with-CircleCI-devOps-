@@ -23,6 +23,17 @@ public class BrowserFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 //chromeOptions.addArguments("--headless");
                 //chromeOptions.addArguments("--window-size=1920,1080");
+				chromeOptions.addArguments('--ignore-certificate-errors')
+				chromeOptions.addArguments("--test-type")
+				chromeOptions.addArguments("test-type");
+				chromeOptions.addArguments("start-maximized");
+				chromeOptions.addArguments("--window-size=1920,1080");
+				chromeOptions.addArguments("--enable-precise-memory-info");
+				chromeOptions.addArguments("--disable-popup-blocking");
+				chromeOptions.addArguments("--disable-default-apps");
+				chromeOptions.addArguments("test-type=browser");
+				chromeOptions.AddArgument("--incognito");
+				chromeOptions.AddArgument("--no-sandbox");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "ff":
@@ -30,6 +41,17 @@ public class BrowserFactory {
                 FirefoxOptions ffOptions = new FirefoxOptions();
                 //ffOptions.addArguments("--headless");
                 //ffOptions.addArguments("--window-size=1920,1080");
+				chromeOptions.addArguments('--ignore-certificate-errors')
+				chromeOptions.addArguments("--test-type")
+				chromeOptions.addArguments("test-type");
+				chromeOptions.addArguments("start-maximized");
+				chromeOptions.addArguments("--window-size=1920,1080");
+				chromeOptions.addArguments("--enable-precise-memory-info");
+				chromeOptions.addArguments("--disable-popup-blocking");
+				chromeOptions.addArguments("--disable-default-apps");
+				chromeOptions.addArguments("test-type=browser");
+				chromeOptions.AddArgument("--incognito");
+				chromeOptions.AddArgument("--no-sandbox");
                 driver = new FirefoxDriver(ffOptions);
                 break;
             default:
