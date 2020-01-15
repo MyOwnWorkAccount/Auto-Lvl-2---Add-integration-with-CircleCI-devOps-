@@ -32,8 +32,8 @@ public class BrowserFactory {
 				chromeOptions.addArguments("--disable-popup-blocking");
 				chromeOptions.addArguments("--disable-default-apps");
 				chromeOptions.addArguments("test-type=browser");
-				chromeOptions.addArgument("--incognito");
-				chromeOptions.addArgument("--no-sandbox");
+				chromeOptions.addArguments("--incognito");
+				chromeOptions.addArguments("--no-sandbox");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "ff":
@@ -50,8 +50,8 @@ public class BrowserFactory {
 				ffOptions.addArguments("--disable-popup-blocking");
 				ffOptions.addArguments("--disable-default-apps");
 				ffOptions.addArguments("test-type=browser");
-				ffOptions.addArgument("--incognito");
-				ffOptions.addArgument("--no-sandbox");
+				ffOptions.addArguments("--incognito");
+				ffOptions.addArguments("--no-sandbox");
                 driver = new FirefoxDriver(ffOptions);
                 break;
             default:
