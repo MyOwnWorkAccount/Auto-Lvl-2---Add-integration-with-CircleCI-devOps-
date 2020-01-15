@@ -53,4 +53,9 @@ public class EbayMainPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(AdvancedBtn)).click();
         return new EbayAdvancedSearchPage(driver);
     }
+
+    public EbayMainPage getPageSource() {
+        System.out.println(driver.getPageSource());
+        return this;
+    }
 }
