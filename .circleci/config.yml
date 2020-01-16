@@ -4,10 +4,7 @@
 #
 version: 2
 jobs:
-  build:
-    branches:
-      ignore:
-        - do-not-execute_autotests
+  build:    
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk-browsers
@@ -109,7 +106,11 @@ workflows:
   version: 2
   build:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore:
+                - do-not-execute_autotests
   additioal:
     jobs:
       - job2
