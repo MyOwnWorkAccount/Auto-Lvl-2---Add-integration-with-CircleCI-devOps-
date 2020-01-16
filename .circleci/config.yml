@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  autotest:
+  build:
     branches:
       ignore:
         - do-not-execute_autotests
