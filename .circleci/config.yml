@@ -43,7 +43,7 @@ jobs:
             - ~/.gradle/caches
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      #- run: gradle dependencies
+      - run: gradle dependencies
       - run: gradlew dependencies
 
       - save_cache:
