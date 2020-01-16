@@ -21,8 +21,9 @@ public class BrowserFactory {
             case "chrome":
                 WebDriverManager.getInstance(CHROME).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("--window-size=1920,1080");
+                //chromeOptions.addArguments("--headless");
+                //chromeOptions.addArguments("--window-size=1920,1080");
+                chromeOptions.addArguments("start-maximized");
                 chromeOptions.addArguments("--incognito");
                 chromeOptions.addArguments("--no-sandbox");
 				/*chromeOptions.addArguments("--ignore-certificate-errors");
@@ -41,8 +42,9 @@ public class BrowserFactory {
             case "ff":
                 WebDriverManager.getInstance(FIREFOX).setup();
                 FirefoxOptions ffOptions = new FirefoxOptions();
-                ffOptions.addArguments("--headless");
-                ffOptions.addArguments("--window-size=1920,1080");
+                //ffOptions.addArguments("--headless");
+                //ffOptions.addArguments("--window-size=1920,1080");
+                ffOptions.addArguments("start-maximized");
                 ffOptions.addArguments("--incognito");
                 ffOptions.addArguments("--no-sandbox");
 				/*ffOptions.addArguments("--ignore-certificate-errors");
