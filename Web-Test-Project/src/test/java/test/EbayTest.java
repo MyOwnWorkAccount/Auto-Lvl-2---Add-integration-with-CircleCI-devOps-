@@ -24,6 +24,7 @@ public class EbayTest extends BaseTest {
         logger.info("Click Buy It Now button. Navigate to Details Page of random product.");
         String phoneNameInResultsList = searchResultsPage
                 .clickBuyItNowButton()
+                .getPageSource()
                 .chooseRandomItem();
         EbayProductDetailsPage productDetailsPage = searchResultsPage.clickRandomItem();
 
@@ -33,7 +34,7 @@ public class EbayTest extends BaseTest {
         Assert.assertTrue("Current page is Product Details page",
                 productDetailsPage.getPageUrl().toLowerCase().contains("/itm/"));
 
-        productDetailsPage.getPageSource();
+        //productDetailsPage.getPageSource();
 
         logger.info("Select product params and quantity.");
         EbayShoppingCartPage shoppingCartPage = productDetailsPage
