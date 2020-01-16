@@ -24,9 +24,8 @@ public class EbayTest extends BaseTest {
         logger.info("Click Buy It Now button. Navigate to Details Page of random product.");
         String phoneNameInResultsList = searchResultsPage
                 .clickBuyItNowButton()
-                .getPageSource()
                 .chooseRandomItem();
-        EbayProductDetailsPage productDetailsPage = searchResultsPage.clickRandomItem();
+        EbayProductDetailsPage productDetailsPage = searchResultsPage.getPageSource().clickRandomItem();
 
         String phoneNameInDetailsPage = productDetailsPage.getPhoneName();
         Assert.assertEquals("Product names in search results list and in details page are not the same",
