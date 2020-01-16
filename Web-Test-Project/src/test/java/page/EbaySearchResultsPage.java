@@ -64,9 +64,4 @@ public class EbaySearchResultsPage extends AbstractPage {
     public String getNullSearchHeadingText() {
         return wait.until(ExpectedConditions.visibilityOf(nullSearchHeading)).getText();
     }
-
-    public EbaySearchResultsPage getPageSource() {
-        System.out.println(driver.getPageSource());
-        return this;
-    }
 }

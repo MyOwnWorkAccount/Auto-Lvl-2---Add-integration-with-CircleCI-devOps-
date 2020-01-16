@@ -57,9 +57,4 @@ public class EbayShoppingCartPage extends AbstractPage {
         searchBlock.search(inputValue);
         return new EbaySearchResultsPage(driver);
     }
-
-    public EbayShoppingCartPage getPageSource() {
-        System.out.println(driver.getPageSource());
-        return this;
-    }
 }
