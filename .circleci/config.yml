@@ -104,3 +104,12 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       - run: ./gradlew -v
+      
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+  additioal:
+    jobs:
+      - job2
