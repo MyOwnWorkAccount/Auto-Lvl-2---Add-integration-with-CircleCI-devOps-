@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  autotest:
     branches:
       ignore:
         - do-not-execute_autotests
@@ -35,7 +35,9 @@ jobs:
             - v1-dependencies-{{ checksum "build.gradle" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-        
+            
       - run: chmod +x ./gradlew && ./gradlew dependencies
+      
       - save_cache:
           paths:
             - ~/.gradle/wrapper
@@ -63,3 +65,42 @@ jobs:
       - store_artifacts:
           path: build/reports/tests/test
           destination: circleci-docs
+
+  job2:
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+    
+    working_directory: ~/Auto-Lvl-2---Add-integration-with-CircleCI-devOps-/Web-Test-Project
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
+    steps:
+      - checkout:
+          path: ~/Auto-Lvl-2---Add-integration-with-CircleCI-devOps-
+
+      - restore_cache:
+          keys:
+            - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+            
+      - run: chmod +x ./gradlew && ./gradlew dependencies
+      
+      - save_cache:
+          paths:
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+          
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - run: ./gradlew -v
