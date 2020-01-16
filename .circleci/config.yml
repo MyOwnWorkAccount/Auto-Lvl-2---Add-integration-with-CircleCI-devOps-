@@ -55,4 +55,4 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: ./gradlew -i test -Dbrowser=ff
+      - run: ./gradlew -i test -Dbrowser=chrome
