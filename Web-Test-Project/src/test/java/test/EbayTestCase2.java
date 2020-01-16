@@ -17,7 +17,7 @@ public class EbayTestCase2 extends BaseTest {
         EbayShoppingCartPage shoppingCartPage = new EbayMainPage(browser)
                 .openPage(PropertyManager.url)
                 .chooseEnLangIfNotChosen()
-                //.getPageSource()
+                .getPageSource()
                 .clickYourShoppingCartBtn();
 
         logger.info("Search for 'tttttttttttttttttttt' in 'Baby' category.");
