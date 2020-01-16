@@ -17,6 +17,8 @@ public class EbayTest extends BaseTest {
                 .chooseEnLangIfNotChosen()
                 .searchForProduct("Xiaomi Mi A1 64GB");
 
+        searchResultsPage.getPageSource();
+
         int productItemsCount = searchResultsPage.getProductItemsCount();
         //Assert.assertEquals("Search results page does not contain 50 results", 50, productItemsCount);
         logger.info("Click Buy It Now button. Navigate to Details Page of random product.");
@@ -37,7 +39,7 @@ public class EbayTest extends BaseTest {
                 .clickAddToCartButton();
 
 
-        shoppingCartPage.getPageSource();
+        //shoppingCartPage.getPageSource();
 
         Assert.assertTrue("Current page is not Cart",
                 shoppingCartPage.getTitleName().toLowerCase().contains("shopping cart"));
