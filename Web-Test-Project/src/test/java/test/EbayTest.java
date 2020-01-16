@@ -17,7 +17,7 @@ public class EbayTest extends BaseTest {
                 .chooseEnLangIfNotChosen()
                 .searchForProduct("Xiaomi Mi A1 64GB");
 
-        searchResultsPage.getPageSource();
+        //searchResultsPage.getPageSource();
 
         int productItemsCount = searchResultsPage.getProductItemsCount();
         //Assert.assertEquals("Search results page does not contain 50 results", 50, productItemsCount);
@@ -32,6 +32,9 @@ public class EbayTest extends BaseTest {
                 phoneNameInResultsList, phoneNameInDetailsPage);
         Assert.assertTrue("Current page is Product Details page",
                 productDetailsPage.getPageUrl().toLowerCase().contains("/itm/"));
+
+        productDetailsPage.getPageSource();
+
         logger.info("Select product params and quantity.");
         EbayShoppingCartPage shoppingCartPage = productDetailsPage
                 .chooseDropdownsValues()

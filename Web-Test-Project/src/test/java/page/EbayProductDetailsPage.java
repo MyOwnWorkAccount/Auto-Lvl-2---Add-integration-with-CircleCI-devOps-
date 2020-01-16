@@ -63,4 +63,9 @@ public class EbayProductDetailsPage extends AbstractPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", AddToCartButton);
         return new EbayShoppingCartPage(driver);
     }
+
+    public EbayProductDetailsPage getPageSource() {
+        System.out.println(driver.getPageSource());
+        return this;
+    }
 }
