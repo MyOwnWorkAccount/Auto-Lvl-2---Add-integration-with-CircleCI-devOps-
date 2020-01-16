@@ -43,8 +43,8 @@ jobs:
             - ~/.gradle/caches
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      - run: gradle dependencies
-      - run: gradlew dependencies
+      #- run: gradle dependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
@@ -52,4 +52,4 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradlew -i test -Dbrowser=chrome
+      - run: ./gradlew -i test -Dbrowser=chrome
