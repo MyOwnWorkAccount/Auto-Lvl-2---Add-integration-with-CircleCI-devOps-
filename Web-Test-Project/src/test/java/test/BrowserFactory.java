@@ -23,6 +23,8 @@ public class BrowserFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--window-size=1920,1080");
+                chromeOptions.addArguments("--incognito");
+                chromeOptions.addArguments("--no-sandbox");
 				/*chromeOptions.addArguments("--ignore-certificate-errors");
 				chromeOptions.addArguments("--test-type");
 				chromeOptions.addArguments("test-type");
@@ -41,6 +43,8 @@ public class BrowserFactory {
                 FirefoxOptions ffOptions = new FirefoxOptions();
                 ffOptions.addArguments("--headless");
                 ffOptions.addArguments("--window-size=1920,1080");
+                ffOptions.addArguments("--incognito");
+                ffOptions.addArguments("--no-sandbox");
 				/*ffOptions.addArguments("--ignore-certificate-errors");
 				ffOptions.addArguments("--test-type");
 				ffOptions.addArguments("test-type");
