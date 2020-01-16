@@ -37,7 +37,7 @@ public class EbayTest extends BaseTest {
                 .clickAddToCartButton();
 
         Assert.assertTrue("Current page is not Cart",
-                shoppingCartPage.getTitleName().toLowerCase().contains("shopping cart"));
+                shoppingCartPage.getPageSource().getTitleName().toLowerCase().contains("shopping cart"));
         Assert.assertEquals("Cart does not contain 1 product",
                 1, shoppingCartPage.getCartProductsCount());
         Assert.assertEquals("Product name in details page and in cart page is not the same",
