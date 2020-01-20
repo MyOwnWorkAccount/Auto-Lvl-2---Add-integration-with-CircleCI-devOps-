@@ -54,7 +54,7 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: ./gradlew -i test -Dbrowser=${browserName}
+      - run: ./gradlew -i test -Dbrowser=${BROWSER_NAME}
       
       - store_test_results:
           path: build/test-results/test
